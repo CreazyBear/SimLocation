@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A52B131F2323A25200AD7654 /* JZLocationConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = A52B131E2323A25200AD7654 /* JZLocationConverter.m */; };
+		A52B13212323A4B100AD7654 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52B13202323A4B100AD7654 /* MapKit.framework */; };
 		A5EB9CA12323692E00E8DC37 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EB9CA02323692E00E8DC37 /* AppDelegate.m */; };
 		A5EB9CA42323692E00E8DC37 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5EB9CA32323692E00E8DC37 /* ViewController.m */; };
 		A5EB9CA62323693000E8DC37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5EB9CA52323693000E8DC37 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		A52B131D2323A25200AD7654 /* JZLocationConverter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JZLocationConverter.h; sourceTree = "<group>"; };
 		A52B131E2323A25200AD7654 /* JZLocationConverter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JZLocationConverter.m; sourceTree = "<group>"; };
+		A52B13202323A4B100AD7654 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		A5EB9C9C2323692E00E8DC37 /* SelectLocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SelectLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5EB9C9F2323692E00E8DC37 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A5EB9CA02323692E00E8DC37 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -38,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A52B13212323A4B100AD7654 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +87,7 @@
 		A5EB9CB323237BEC00E8DC37 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A52B13202323A4B100AD7654 /* MapKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -121,7 +125,7 @@
 						CreatedOnToolsVersion = 10.3;
 						SystemCapabilities = {
 							com.apple.Maps.Mac = {
-								enabled = 0;
+								enabled = 1;
 							};
 							com.apple.Sandbox = {
 								enabled = 0;
@@ -302,6 +306,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SelectLocation/SelectLocation.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2FWNJCD9X7;
@@ -319,6 +324,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SelectLocation/SelectLocation.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2FWNJCD9X7;
