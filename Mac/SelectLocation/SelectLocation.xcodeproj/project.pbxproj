@@ -309,7 +309,7 @@
 				CODE_SIGN_ENTITLEMENTS = SelectLocation/SelectLocation.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 2FWNJCD9X7;
+				DEVELOPMENT_TEAM = 474UB68673;
 				INFOPLIST_FILE = SelectLocation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -327,7 +327,7 @@
 				CODE_SIGN_ENTITLEMENTS = SelectLocation/SelectLocation.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 2FWNJCD9X7;
+				DEVELOPMENT_TEAM = 474UB68673;
 				INFOPLIST_FILE = SelectLocation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
