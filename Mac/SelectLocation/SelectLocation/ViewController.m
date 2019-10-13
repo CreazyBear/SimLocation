@@ -19,11 +19,13 @@
 
 @property (nonatomic, strong) NSMutableArray * annotationArray;
 @property (nonatomic, strong) NSString *gpxFileStr;
+@property (nonatomic, assign) BOOL commandDown;
 
 @end
 
 @implementation ViewController
 - (void)viewDidLoad {
+    self.commandDown = NO;
     [super viewDidLoad];
     [self setupMapView];
 }
@@ -219,4 +221,40 @@
 
 }
 
+#pragma mark - event
+-(void)mouseDown:(NSEvent *)event {
+    NSPoint touchPoint = event.locationInWindow;
+    CLLocationCoordinate2D touchMapCoordinate = [self.mapView convertPoint:touchPoint toCoordinateFromView:self.mapView];
+    if (self.commandDown) {
+        self.commandDown = NO;
+        NSAlert *alert = [[NSAlert alloc]init];
+        [alert addButtonWithTitle:@"确认"];
+        [alert addButtonWithTitle:@"再想想"];
+        alert.messageText = @"确认根据这个位置修改GPX文件？";
+        alert.informativeText = [NSString stringWithFormat:@"地图选点，需要进行坐标转换。在使用这个功能时，请先尽可能的将地图放大，不然误差会有点大"];
+        [alert setAlertStyle:NSAlertStyleWarning];
+        //回调Block
+        [alert beginSheetModalForWindow:self.view.window completionHandler:^(NSModalResponse returnCode) {
+            if(returnCode == NSAlertFirstButtonReturn) {
+                FJMKAnnotation *annotation=[[FJMKAnnotation alloc] init];
+                annotation.coordinate = touchMapCoordinate;
+                annotation.title = @"地图选点";
+                [self modifyGPXAction:annotation];
+            }
+        }];
+    }
+
+}
+
+-(void)flagsChanged:(NSEvent *)event {
+    // Mask out everything but the key flags
+    NSUInteger flags = [event modifierFlags] & NSEventModifierFlagDeviceIndependentFlagsMask;
+    if( flags == NSEventModifierFlagCommand ){
+        self.commandDown = YES;
+    }
+    else if([event keyCode] == 55)
+    {
+        self.commandDown = NO;
+    }
+}
 @end
